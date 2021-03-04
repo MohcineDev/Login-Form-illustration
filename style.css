@@ -1,0 +1,349 @@
+*::selection {
+    color: transparent;
+}
+
+body {
+    background-color: #313131;
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    --col: #4133d2;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.credit {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--col);
+    cursor: pointer;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.credit a {
+    color: #eee;
+    padding: 10px;
+}
+
+.credit::before, .credit:after {
+    position: absolute;
+    content: "";
+}
+
+.credit:after {
+    box-sizing: border-box;
+    border: 8px solid;
+    border-color: transparent transparent transparent #eee;
+    width: 8px;
+    height: 8px;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+}
+
+.credit:hover::after {
+    right: -3px;
+}
+
+.credit::before {
+    background-color: #1769ff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    transition: .5s ease-in-out;
+    z-index: -1;
+}
+
+.credit:hover::before {
+    left: 0;
+}
+
+input[type=color] {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+}
+
+.main {
+    width: 365px;
+    height: 725px;
+    background-color: #fff;
+    border-radius: 40px;
+    position: relative;
+    margin-top: 2rem;
+
+}
+
+#power, #vUp, #vDown, #sim {
+    background-color: rgb(246, 246, 226);
+    border-radius: 5px;
+    width: 8px;
+    position: absolute;
+    z-index: -1;
+}
+
+#power, #vUp, #vDown {
+    left: -3px;
+}
+
+#power {
+    height: 27px;
+    top: 12%;
+}
+
+#vUp, #vDown {
+    height: 45px;
+}
+
+#vUp {
+    top: 18%;
+}
+
+#vDown {
+    top: 26%;
+}
+
+#sim {
+    height: 70px;
+    right: -3px;
+    top: 22%;
+}
+
+.screen {
+    width: 330px;
+    height: 690px;
+    background-color: var(--col);
+    border-radius: 30px;
+    justify-self: center;
+    align-self: center;
+    position: absolute;
+    left: calc(50% - 330px /2);
+    top: calc(50% - 690px /2);
+}
+
+.media {
+    width: 160px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 0 0 18px 18px;
+    position: absolute;
+    top: 0;
+    left: 90px;
+    right: 90px;
+    position: relative;
+}
+
+.sound {
+    background-color: var(--col);
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    border-radius: 10px;
+}
+
+.cam {
+    background-color: var(--col);
+    height: 5px;
+    width: 50px;
+    position: absolute;
+    top: 7px;
+    left: 55px;
+    right: 55px;
+    border-radius: 10px;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin: 80px auto 20px;
+    text-transform: uppercase;
+}
+
+.content h2, .content p {
+    margin: 0;
+}
+
+.content p {
+    font-size: 12px;
+}
+
+.content hr {
+    color: var(--col);
+    margin: 2px 0;
+}
+
+.info {
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.loginForm {
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 0 5px #bbb;
+}
+
+form h3 {
+    text-align: center;
+    font-weight: 500;
+    margin: 8px 0 0;
+    font-weight: 600;
+    color: var(--col);
+}
+
+form input {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: 25px;
+    padding: 0 0 4px 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--col);
+}
+
+input:focus {
+    color: blue;
+}
+
+form a {
+    font-size: 10px;
+    color: var(--col);
+    margin-top: 15px;
+    display: block;
+}
+
+form input[type=submit] {
+    background-color: var(--col);
+    border: none;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 15px;
+    font-weight: 700;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(48, 33, 211);
+    cursor: pointer;
+}
+
+.loginForm p {
+    font-size: 11px;
+    padding: 4px 6px;
+    border-radius: 8px;
+    background-color: rgb(227, 227, 217);
+    width: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.socials {
+    text-align: center;
+    margin: 15px 0 5px 0;
+}
+
+.socials svg {
+    width: 30px;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+#canvas {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 29px 29px;
+}
+
+.end {
+    position: absolute;
+    bottom: 35px;
+    width: 80%;
+    left: 10%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 4;
+}
+
+.end p {
+    margin: 8px;
+}
+
+.end p, .end button {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.end button {
+    color: var(--col);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.end button:hover {
+    border-bottom: 1px solid var(--col);
+}
+.login{
+    display: none;
+}
+/*  */
+.onGitHub {
+    bottom: 10px;
+    color: var(--col0);
+    left: calc(50% - 61px);
+    position: absolute;
+}
+
+.onGitHub a {
+    color: var(--col);
+    color: #ddd;
+}
+
+.onGitHub svg {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.move {
+    animation-name: moving;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes moving {
+    50% {
+        left: calc(50% - 40px);
+    }
+}

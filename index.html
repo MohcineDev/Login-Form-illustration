@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>LogIn Form / illustration</title>
+</head>
+
+<body>
+    <div class="credit">
+        <a href="https://www.behance.net/gallery/64483559/Login-Screen-Personal-Nutrition-Dite-App-Design"
+            target="_blank">inspired from</a>
+    </div>
+    <input type="color">
+    <div class="main">
+        <div id="power"></div>
+        <div id="vUp"></div>
+        <div id="vDown"></div>
+        <div id="sim"></div>
+        <div class="screen">
+            <div class="media">
+                <div class="sound"></div>
+                <div class="cam"></div>
+            </div>
+            <div class="content">
+                <h2>Dite Guru</h2>
+                <hr>
+                <p>calculate every bite</p>
+            </div>
+            <p class="info">fill the below information to log in</p>
+            <canvas id="canvas" width="330px" height="300px"></canvas>
+            <div class="loginForm">
+                <form>
+                    <h3>Login Account</h3>
+                    <input type="text" placeholder="User Name or E-mail" required minlength="8" aria-label="User Name or E-mail" id="name">
+                    <input type="password" placeholder="Password" required minlength="8" aria-label="Password" id="pass"><br>
+                    <a href="#">In case you forgot password?</a> <br>
+                    <input type="submit" value="LOG IN">
+                </form>
+
+                <p>OR</p>
+                <div class="socials">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                        <path style="fill: #e62b33;" d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25Z" />
+                        <path style="fill: #fff;" class="cls-2"
+                            d="M35.63,24.53h-.54v-.48c0-.69,0-1.38,0-2.06,0-.12-.12-.32-.19-.32-.62,0-1.25,0-1.92,0v2.87H30.1c0,.22,0,.36,0,.51,0,.52,0,1,.07,1.56l1.52.05H33v2.83h2.07V26.63h2.84v-2.1Z" />
+                        <path style="fill: #fff;" class="cls-2"
+                            d="M27.48,24.29c-1.79,0-3.59,0-5.38,0-.51,0-1,0-1.53,0-.1,0-.28.12-.28.19,0,1,0,2.06,0,3.15h4.39c-.06.22-.09.37-.14.52a4.24,4.24,0,0,1-5,2.62,4.84,4.84,0,0,1-4-5.74A4.63,4.63,0,0,1,16,23.94a4.83,4.83,0,0,1,5.38-2.72,4.63,4.63,0,0,1,2.06,1.07l2.4-2.42-.2-.16a7.91,7.91,0,0,0-6.66-1.83,8.23,8.23,0,0,0,2.34,16.28,7.39,7.39,0,0,0,4.77-2.23,8.44,8.44,0,0,0,2.07-7.12C28.07,24.37,27.89,24.28,27.48,24.29Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                        <circle style="fill: #4064ac;" cx="25" cy="25" r="25"
+                            transform="translate(-0.36 0.36) rotate(-0.82)" />
+                        <path style="fill: #fff;"
+                            d="M27.2,19.15V16.78a1.25,1.25,0,0,1,1.31-1.42h3.32V10.28l-4.57,0c-5.08,0-6.23,3.79-6.23,6.21v2.68H18.09v5.92h3V39.88H27V25.07h4.4l.21-2.33.33-3.59Z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="end">
+                <p>Don't have an account ?</p>
+                <button class="register">REGISTER</button>
+                <button class="login">LOGIN</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="onGitHub move">
+        <a href="https://github.com/MohcineDev" target="_blank">@Mohcinedev</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
