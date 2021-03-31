@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>LogIn Form / illustration</title>
 </head>
@@ -33,12 +34,13 @@
             <div class="loginForm">
                 <form>
                     <h3>Login Account</h3>
-                    <input type="text" placeholder="User Name or E-mail" required minlength="8" aria-label="User Name or E-mail" id="name">
+                    <input type="text" placeholder="User Name or E-mail" required minlength="8"
+                        aria-label="User Name or E-mail" id="name">
+                    <input type="email" placeholder="Your Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-label="Your Email"/>
                     <input type="password" placeholder="Password" required minlength="8" aria-label="Password" id="pass"><br>
                     <a href="#">In case you forgot password?</a> <br>
                     <input type="submit" value="LOG IN">
                 </form>
-
                 <p>OR</p>
                 <div class="socials">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -56,11 +58,10 @@
                     </svg>
                 </div>
             </div>
-
             <div class="end">
                 <p>Don't have an account ?</p>
-                <button class="register">REGISTER</button>
-                <button class="login">LOGIN</button>
+                <button id="register">REGISTER</button>
+                <button id="login">LOGIN</button>
             </div>
         </div>
     </div>

@@ -1,3 +1,7 @@
+:root {
+    --col: #4133d2;
+}
+
 *::selection {
     color: transparent;
 }
@@ -8,7 +12,6 @@ body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
-    --col: #4133d2;
     position: relative;
     overflow-x: hidden;
 }
@@ -82,7 +85,6 @@ input[type=color] {
     border-radius: 40px;
     position: relative;
     margin-top: 2rem;
-
 }
 
 #power, #vUp, #vDown, #sim {
@@ -226,6 +228,18 @@ form input {
     border-bottom: 1px solid var(--col);
 }
 
+#login, input[type=email] {
+    display: none;
+}
+
+.register input[type=email], .register #login {
+    display: inline-block
+}
+
+.register a, .register #register {
+    display: none;
+}
+
 input:focus {
     color: blue;
 }
@@ -314,10 +328,13 @@ input[type=submit]:hover {
 .end button:hover {
     border-bottom: 1px solid var(--col);
 }
-.login{
+
+.login {
     display: none;
 }
+
 /*  */
+
 .onGitHub {
     bottom: 10px;
     color: var(--col0);

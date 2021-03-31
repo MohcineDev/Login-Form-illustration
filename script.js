@@ -1,11 +1,13 @@
 const Color = document.querySelector('input[type=color]')
 const Form = document.querySelector('.loginForm form')
-const Register = document.querySelector('.register')
-const Login = document.querySelector('.login')
-let Input = document.querySelectorAll('form input:not(input[type=submit])')
+const Register = document.querySelector('#register')
+const Login = document.querySelector('#login')
 const Submit = document.querySelector('form input[type=submit]')
-
 const canvas1 = document.getElementById("canvas");
+let Input = document.querySelectorAll('form input:not(input[type=submit])')
+
+//************ draw the bottom screen canvas */
+//#region 
 let ctx = canvas1.getContext("2d");
 
 ctx.lineWidth = 2
@@ -19,58 +21,50 @@ ctx.lineTo(0, 30);
 ctx.fillStyle = 'rgba(255,255,255,0.9)'
 ctx.fill()
 
-
+//#endregion
 // ----------
 
-function show() {
-    this.setAttribute('placeholder', '')
+const hidePlaceHolder = (e) => {
+    e.target.setAttribute('placeholder', '')
 }
-function hide() {
-    this.setAttribute('placeholder', this.getAttribute('aria-label'))
+const showPlaceHolder = (e) => {
+    e.target.setAttribute('placeholder', e.target.getAttribute('aria-label'))
 }
 
 const togglePlaceholder = () => {
-    Input.forEach(item => item.addEventListener('focus', show))
-    Input.forEach(item => item.addEventListener('blur', hide))
+    Input.forEach(item => item.addEventListener('focus', hidePlaceHolder))
+    Input.forEach(item => item.addEventListener('blur', showPlaceHolder))
 }
 
 togglePlaceholder()
 
+//********** change the app main color */
 Color.addEventListener('change', function () {
     document.body.style.setProperty('--col', this.value)
 })
 
+//*********** prevent the default form submit */
 Form.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(123);
 })
 
+//********** handle form register  */
 Register.addEventListener('click', () => {
+    console.log(1111111111);
     Form.children[0].textContent = 'Account Register'
     Form.children[1].setAttribute('placeholder', 'User Name')
-    let email = document.createElement('input')
-    email.setAttribute('type', 'email')
-    email.setAttribute('pattern', /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)
-    email.placeholder = 'Your Email'
-    email.setAttribute('aria-label', 'Your Email')
-    Form.children[1].after(email)
     Input = document.querySelectorAll('form input:not(input[type=submit])')
-    Register.style.display = 'none'
-    Login.style.display = 'inline-block'
-    console.log(Submit);
     Submit.setAttribute('value', 'Register')
-    Form.querySelector('a').style.display = 'none'
-    togglePlaceholder()
-
+    document.querySelector('.end p').textContent = 'You have an account ?'
+    document.querySelector('.screen').classList.toggle('register')
+    // togglePlaceholder()
 })
 
+//********** handle form login  */
 Login.addEventListener('click', () => {
-    document.querySelector('input[type=email]').style.display = 'none'
+    console.log(7777);
     Submit.setAttribute('value', 'Login')
     Form.children[0].textContent = 'Login Account'
-    Form.querySelector('a').style.display = 'inline-block'
-
-    Login.style.display = 'none'
-    Register.style.display = 'inline-block'
-
+    document.querySelector('.end p').textContent = 'Don\'t have an account ?'
+    document.querySelector('.screen').classList.toggle('register')
 })
