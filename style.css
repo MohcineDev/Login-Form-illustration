@@ -81,18 +81,19 @@ input[type=color] {
 .main {
     width: 365px;
     height: 725px;
-    background-color: #fff;
-    border-radius: 40px;
-    position: relative;
     margin-top: 2rem;
+    position: relative;
+    border-radius: 40px;
+    background-color: #fff;
 }
 
-#power, #vUp, #vDown, #sim {
-    background-color: rgb(246, 246, 226);
-    border-radius: 5px;
+.main>button {
     width: 8px;
-    position: absolute;
     z-index: -1;
+    border: none;
+    position: absolute;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 226);
 }
 
 #power, #vUp, #vDown {
