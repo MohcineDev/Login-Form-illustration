@@ -20,32 +20,36 @@ a {
     text-decoration: none;
 }
 
+.credit, input[type=color] {
+    position: fixed;
+    top: 1rem;
+    z-index: 2;
+    cursor: pointer;
+    border: 2px solid #eee;
+}
+
 .credit {
-    position: absolute;
-    top: 15px;
     right: 10px;
     border-radius: 10px;
     padding: 10px;
     background-color: var(--col);
-    cursor: pointer;
-    z-index: 2;
     overflow: hidden;
 }
 
 .credit a {
-    color: #eee;
+    color: #fff;
     padding: 10px;
 }
 
 .credit::before, .credit:after {
-    position: absolute;
     content: "";
+    position: absolute;
 }
 
 .credit:after {
     box-sizing: border-box;
-    border: 8px solid;
-    border-color: transparent transparent transparent #eee;
+    border: 8px solid transparent;
+    border-left-color: #eee;
     width: 8px;
     height: 8px;
     right: 1px;
@@ -73,14 +77,13 @@ a {
 }
 
 input[type=color] {
-    position: fixed;
-    top: 1rem;
     left: 2rem;
+    padding: 0;
 }
 
 .main {
-    width: 365px;
-    height: 725px;
+    width: 360px;
+    height: 720px;
     margin-top: 2rem;
     position: relative;
     border-radius: 40px;
@@ -128,8 +131,6 @@ input[type=color] {
     height: 690px;
     background-color: var(--col);
     border-radius: 30px;
-    justify-self: center;
-    align-self: center;
     position: absolute;
     left: calc(50% - 330px /2);
     top: calc(50% - 690px /2);
@@ -140,11 +141,10 @@ input[type=color] {
     height: 23px;
     background-color: #fff;
     border-radius: 0 0 18px 18px;
-    position: absolute;
-    top: 0;
-    left: 90px;
-    right: 90px;
     position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sound {
@@ -185,7 +185,7 @@ input[type=color] {
 }
 
 .content hr {
-    color: var(--col);
+    border: #fff 1px solid;
     margin: 2px 0;
 }
 
@@ -212,9 +212,7 @@ input[type=color] {
 
 form h3 {
     text-align: center;
-    font-weight: 500;
     margin: 8px 0 0;
-    font-weight: 600;
     color: var(--col);
 }
 
@@ -242,32 +240,31 @@ form input {
 }
 
 input:focus {
-    color: blue;
+    color: var(--col);
 }
 
 form a {
     font-size: 10px;
     color: var(--col);
     margin-top: 15px;
-    display: block;
+    display: inline-block;
 }
 
 form input[type=submit] {
     background-color: var(--col);
-    border: none;
     width: 90%;
     display: block;
-    margin: 0 auto;
+    margin: 15px auto;
     border-radius: 20px;
     color: #fff;
-    margin-top: 15px;
     font-weight: 700;
     padding: 10px 0;
-    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 input[type=submit]:hover {
-    background-color: rgb(48, 33, 211);
+    background: var(--col);
+    opacity: 0.8;
     cursor: pointer;
 }
 
@@ -324,10 +321,12 @@ input[type=submit]:hover {
     border: none;
     cursor: pointer;
     outline: none;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 1px;
 }
 
 .end button:hover {
-    border-bottom: 1px solid var(--col);
+    border-color: var(--col);
 }
 
 .login {
@@ -354,10 +353,7 @@ input[type=submit]:hover {
 }
 
 .move {
-    animation-name: moving;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
+    animation: moving 5s infinite ease-in-out;
 }
 
 @keyframes moving {

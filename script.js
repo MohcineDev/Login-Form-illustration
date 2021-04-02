@@ -1,8 +1,7 @@
 const inputColor = document.querySelector('input[type=color]')
 const Form = document.querySelector('.loginForm form')
-const Register = document.querySelector('#register')
-const Login = document.querySelector('#login')
-const Submit = document.querySelector('form input[type=submit]')
+const switchFormBtn = document.querySelectorAll('.end button')
+const submitBtn = document.querySelector('form input[type=submit]')
 const canvas1 = document.getElementById("canvas");
 const toggleScreen = document.querySelector('.screen')
 const haveAccount = document.querySelector('.end p')
@@ -51,19 +50,20 @@ Form.addEventListener('submit', (e) => {
 })
 
 //********** handle register form  */
-Register.addEventListener('click', () => {
-    Form.children[0].textContent = 'Account Register'
+switchFormBtn[0].addEventListener('click', () => {
     Form.children[1].setAttribute('placeholder', 'User Name')
-    Input = document.querySelectorAll('form input:not(input[type=submit])')
-    Submit.setAttribute('value', 'Register')
-    haveAccount.textContent = 'You have an account ?'
-    toggleScreen.classList.toggle('register')
+    switchForm('Account Register', 'Register', 'You have an account ?')
 })
 
 //********** handle login form  */
-Login.addEventListener('click', () => {
-    Submit.setAttribute('value', 'Login')
-    Form.children[0].textContent = 'Login Account'
-    haveAccount.textContent = 'Don\'t have an account ?'
-    toggleScreen.classList.toggle('register')
+switchFormBtn[1].addEventListener('click', () => {
+    switchForm('Login Account', 'Login', 'Don\'t have an account ?')
 })
+
+//********** handle form details based on Login / Register */
+const switchForm = (formHeader, btnValue, formHint) => {
+    Form.children[0].textContent = formHeader
+    submitBtn.setAttribute('value', btnValue)
+    haveAccount.textContent = formHint
+    toggleScreen.classList.toggle('register')
+}
